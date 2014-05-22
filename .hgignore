@@ -1,0 +1,5 @@
+^\.git
+\.gem$
+^Gemfile\.lock$
+\.sublime-(project|workspace)$
+^doc/
