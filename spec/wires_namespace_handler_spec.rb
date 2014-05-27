@@ -6,14 +6,14 @@ describe YARD::Handlers::Ruby::WiresNamespaceHandler do
   include StringParsing
   
   it "replaces the dynamic Wires namespace module with a simplified one" do
-    parse_string <<-CODE
+    parse_string <<-'END'
       module Wires.current_network::Namespace
         class Foo
           def bar
           end
         end
       end
-    CODE
+    END
     
     YARD::Registry.at('Wires').         should be_a YARD::CodeObjects::ModuleObject
     YARD::Registry.at('Wires::Foo').    should be_a YARD::CodeObjects::ClassObject

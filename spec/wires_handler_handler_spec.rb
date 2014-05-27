@@ -6,7 +6,7 @@ describe YARD::Handlers::Ruby::WiresHandlerHandler do
   include StringParsing
   
   it "tags the given method with a decorator tag and a ntoe tag" do
-    parse_string <<-CODE
+    parse_string <<-'END'
       class Obj
         handler def foo
         end
@@ -17,7 +17,7 @@ describe YARD::Handlers::Ruby::WiresHandlerHandler do
         handler def baz
         end, channel: :chan2, event: :bar
       end
-    CODE
+    END
     
     [
       'Obj#foo', 'Handles :foo events',
