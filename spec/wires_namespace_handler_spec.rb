@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 
-describe YARD::Handlers::WiresNamespaceHandler do
+describe YARD::Handlers::Ruby::WiresNamespaceHandler do
   include StringParsing
   
   it "replaces the dynamic Wires namespace module with a simplified one" do

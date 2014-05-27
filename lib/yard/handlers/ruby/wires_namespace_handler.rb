@@ -1,5 +1,5 @@
 
-module YARD::Handlers
+module YARD::Handlers::Ruby
   class WiresNamespaceHandler < YARD::Handlers::Ruby::Base
     handles :module
     
