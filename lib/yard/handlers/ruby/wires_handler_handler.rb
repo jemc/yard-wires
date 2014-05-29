@@ -13,7 +13,7 @@ module YARD::Handlers::Ruby
       channel = kwargs[:channel]
       event   = kwargs[:event]
       
-      process_decorator statement.parameters[0] do |method, proxy, name|
+      process_decorator statement.parameters[0] do |method, node, name|
         event_name   = event || :":#{name}"
         channel_text = channel ? " on channel: #{channel}" : ""
         method.add_tag YARD::Tags::Tag.new 'note',
