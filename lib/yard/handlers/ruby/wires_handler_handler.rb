@@ -1,7 +1,7 @@
 
 module YARD::Handlers::Ruby
   class WiresHandlerHandler < YARD::Handlers::Ruby::Base
-    include DecoratorHelper
+    include DecoratorHandlerMethods
     handles method_call(:handler)
     
     process do
@@ -13,7 +13,7 @@ module YARD::Handlers::Ruby
       channel = kwargs[:channel]
       event   = kwargs[:event]
       
-      process_decorator nodes: 0 do |method, proxy, name|
+      process_decorator statement.parameters[0] do |method, proxy, name|
         event_name   = event || :":#{name}"
         channel_text = channel ? " on channel: #{channel}" : ""
         method.add_tag YARD::Tags::Tag.new 'note',
