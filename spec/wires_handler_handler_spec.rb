@@ -5,7 +5,7 @@ require 'spec_helper'
 describe YARD::Handlers::Ruby::WiresHandlerHandler do
   include StringParsing
   
-  it "tags the given method with a decorator tag and a ntoe tag" do
+  it "tags the given method with a decorator tag and a note tag" do
     parse_string <<-'END'
       class Obj
         handler def foo
